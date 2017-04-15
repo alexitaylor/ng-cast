@@ -5,13 +5,12 @@ angular.module('video-player')
 .directive('videoList', function() {
   return {
   	scope: {
-  	  videos: '<'
+  	  videos: '<',
+      onClick: '<'
     },
   	controllerAs: 'ctrl',
     bindToController: true,
     controller: function() {
-      this.onClick = () => {
-      } 
     },
     templateUrl: 'src/templates/videoList.html'
   };
