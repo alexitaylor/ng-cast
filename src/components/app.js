@@ -1,4 +1,20 @@
 angular.module('video-player')
+.controller('myController', function(youTube) {
+  this.currentVideo = window.exampleVideoData[0];
+  this.videos = window.exampleVideoData;
+  this.selectVideo = (video) => {
+    this.currentVideo = video;
+  };
+  this.searchResults = (data) => {
+    this.videos = data;
+    this.currentVideo = data[0];
+  };
+  this.searchVideo = (input) => {
+    youTube.search(input, this.searchResults);
+  };
+
+  youTube.search('cats', this.searchResults);
+})
 
 .directive('app', function() {
   return {
@@ -7,17 +23,7 @@ angular.module('video-player')
     },
   	controllerAs: 'ctrl',
     bindToController: true,
-    controller: function() {
-      this.selectVideo = function() {},
-      this.searchResults = function() 3{},
-      this.currentVideo = window.exampleVideoData[0],
-      this.videos = window.exampleVideoData
-      this.onClick = (video) => {
-        // this.currentVideo = 'dawdn';
-        this.currentVideo = video;
-        // console.log("I was clicked", video);
-      }
-    },
+    controller: 'myController',
     templateUrl: 'src/templates/app.html'
   };
 });
