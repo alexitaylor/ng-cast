@@ -1,19 +1,17 @@
 angular.module('video-player')
-// .controller('vleController', function($scope) {
-// 	//$scope.video = window.exampleVideoData
-// 	// console.log($scope.video)
-// 	// $scope.title = window.exampleVideoData.video.snippet.title
-
-// 	// }
-// })
 .directive('videoListEntry', function() {
   return {
   	scope: {
-  		video: '<'
+  		video: '<',
+      onClick: '<'
     },
   	controllerAs: 'ctrl',
     bindToController: true,
     controller: function() {
+      // this.videoClick = () => {
+      //   // this.video = window.exampleVideoData[index];
+      //   console.log("I was clicked")
+      // }
     },
     templateUrl: 'src/templates/videoListEntry.html'
   };

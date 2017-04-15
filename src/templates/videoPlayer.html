@@ -4,7 +4,7 @@
     </iframe>
     {{ctrl.text}}
   </div>
-  <div class="video-player-details">
+  <div class="video-player-details" ng-if="ctrl.video">
     <h3>{{ctrl.video.snippet.title}}</h3>
     <div>{{ctrl.video.snippet.description}}</div>
   </div>
