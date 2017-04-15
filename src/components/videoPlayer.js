@@ -13,6 +13,10 @@ angular.module('video-player')
     controllerAs: 'ctrl',
     bindToController: true,
     controller: function() {
+      if (!this.video) {
+        this.text = '';
+      }
+      this.text = 'Please wait';
     },
     templateUrl: 'src/templates/videoPlayer.html'
   };
