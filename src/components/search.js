@@ -1,7 +1,16 @@
-angular.module('video-player')
+angular.module('video-player') 
 
 .directive('search', function() {
   return {
-    // TODO
+  	scope: {
+
+    },
+    
+  	controllerAs: 'ctrl',
+    bindToController: true,
+    controller: function() {
+
+    },
+    templateUrl: 'src/templates/search.html'
   };
 });
